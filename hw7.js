@@ -4,11 +4,13 @@ const dog = {
     color: "white",
     age: 5, 
 }
-
 dog.getInfo = function() {
-  return this; 
- }; 
-console.log(dog.getInfo());
+     for (let key in dog){
+    if(typeof dog[key] !== 'function')
+      console.log(`${key}: ${dog[key]}`);
+  }
+}
+
+dog.getInfo();
 dog.eyes = 'green';
-console.log(dog.getInfo());
- 
+dog.getInfo();
